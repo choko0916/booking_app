@@ -9,8 +9,41 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header>
+      <div class="header_logo">
+  
+      </div>
+
+      <% if user_signed_in? %>  <!-- ユーザーがログインしているか調べる(diviseをアプリに導入すると使えるようになるメソッド)-->
+        <div class="header_right"> <!-- 4/29 ヘッダーナビ作成する -->
+          <p><%= current_user.name %></p>
+          <div class="button">
+            <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          </div>
+        </div>
+      <% else %>
+        <div class="header_right">
+          <div class="signed_in_message">
+            <p>現在ログインしていません</p>
+          </div>
+          <div class="button">
+            <button class="sign_in"><%= link_to "ログイン", new_user_session_path %></button>
+            <button class="sign_up"><%= link_to "登録する", new_user_registration_path %></button>
+            <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          </div>
+        </div>
+      <% end %>  
+    </header>
+    <% if notice or alert %>
+      <div class="flash">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
-  </body>
+    <footer>
+
+    </footer>
+  </body>  
 </html>
