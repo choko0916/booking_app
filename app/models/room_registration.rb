@@ -1,0 +1,2 @@
+class RoomRegistration < ApplicationRecord
+end
