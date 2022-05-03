@@ -13,7 +13,7 @@ class RoomRegistrationsController < ApplicationController
       flash[:notice] = "ルームを新規登録しました"
       redirect_to room_registrations_path
     else
-      redirect_to :new
+      render :new
     end
   end
 
