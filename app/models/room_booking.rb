@@ -1,3 +1,3 @@
 class RoomBooking < ApplicationRecord
-  belongs_to :room_registration
+  belongs_to :user
 end
