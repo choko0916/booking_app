@@ -18,14 +18,20 @@ class RoomRegistrationsController < ApplicationController
   end
 
   def show
+    @room_registration = RoomRegistration.find(params[:id])
   end
 
   def edit
+    @room_registration = RoomRegistration.find(params[:id])
   end
 
   def updated
   end
 
   def destroy
+    @room_registration = RoomRegistration.find(params[:id])
+    @room_registration.destroy
+    flash[:notice] = "ルームを削除しました"
+    redirect_to room_registrations_path
   end
 end
