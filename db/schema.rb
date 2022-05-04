@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_04_093205) do
+ActiveRecord::Schema.define(version: 2022_05_04_165033) do
 
   create_table "room_bookings", force: :cascade do |t|
-    t.string "start_date"
-    t.string "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "number_of_people"
     t.integer "room_registration_id"
     t.datetime "created_at", precision: 6, null: false
