@@ -64,3 +64,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'rmagick'
+
+gem 'pry-rails'
