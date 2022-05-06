@@ -8,7 +8,7 @@ class RoomRegistrationsController < ApplicationController
   end
 
   def create
-    @room_registration = RoomRegistration.new(params.require(:room_registration).permit(:room_name, :room_introduction, :room_price, :room_address, :room_image))
+    @room_registration = RoomRegistration.new(params.require(:room_registration).permit(:id, :room_name, :room_introduction, :room_price, :room_address, :room_image))
     if @room_registration.save
       flash[:notice] = "ルームを新規登録しました"
       redirect_to room_registrations_path
@@ -18,7 +18,12 @@ class RoomRegistrationsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    binding.pry
     @room_registration = RoomRegistration.find(params[:id])
+    binding.pry
+    @room_booking = RoomBooking.new
+    binding.pry
   end
 
   def edit

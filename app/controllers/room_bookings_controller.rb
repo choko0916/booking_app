@@ -8,13 +8,16 @@ class RoomBookingsController < ApplicationController
   end
 
   def create
-    @room_booking = RoomBooking.new(params.require(:room_booking).permit(:start_date, :end_date, :number_of_people))
+    @room_booking = RoomBooking.new(params.require(:room_booking).permit(:start_date, :end_date, :number_of_people, :room_registration_id, :user_id))
+    binding.pry
     if @room_booking.save
+      binding.pry
       flash[:notice] = "予約が完了しました"
-      redirect_to room_bookings_path
+      redirect_to room_registrations_path
     else
+      binding.pry
       flash[:notice] = "予約が失敗しました"
-      render new_room_booking_path
+      redirect_to room_registrations_path
     end
   end
 

@@ -1,12 +1,10 @@
 <div class="booking_container">
   <h3>予約ページ</h3>
-
-  
  
   <%= form_with model: @room_booking do |f| %>
 
-  <p><%= f.hidden_field :room_registration_id, value: @room_registration.id %></p>
-
+    <p><%= f.hidden_field :room_registration_id, value: @room_registration.id %></p>
+    <p><%= f.hidden_field :user_id, value: @user.id %></p>
     <div class="booking">
       <%= f.label :start_date, "開始日", class:"bold" %><br>
       <%= f.date_field :start_date, class:"input_field" %>
