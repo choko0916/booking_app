@@ -39,4 +39,5 @@ class RoomRegistrationsController < ApplicationController
     flash[:notice] = "ルームを削除しました"
     redirect_to room_registrations_path
   end
+
 end
