@@ -19,11 +19,8 @@ class RoomRegistrationsController < ApplicationController
 
   def show
     @user = current_user
-    binding.pry
     @room_registration = RoomRegistration.find(params[:id])
-    binding.pry
     @room_booking = RoomBooking.new
-    binding.pry
   end
 
   def edit
