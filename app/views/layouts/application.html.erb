@@ -11,14 +11,15 @@
   </head>
   <body>
     <header>
-      <div class="header_logo">
-  
+      <div class="header_left">
+        <div><%= image_tag 'logo.png', class: 'header_logo' %></div>
+        <div class="search"><%= render "shared/search" %></div>
+        <div class="search_free_word"><%= render "shared/search_free_word" %></div>
       </div>
-
       <% if user_signed_in? %>  <!-- ユーザーがログインしているか調べる(diviseをアプリに導入すると使えるようになるメソッド)-->
         <div class="header_right"> <!-- 4/29 ヘッダーナビ作成する -->
           <p><%= current_user.name %></p>
-          <div class="button">
+          <div class="header_button">
             <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
           </div>
         </div>
@@ -27,7 +28,7 @@
           <div class="signed_in_message">
             <p>現在ログインしていません</p>
           </div>
-          <div class="button">
+          <div class="header_button">
             <button class="sign_in"><%= link_to "ログイン", new_user_session_path %></button>
             <button class="sign_up"><%= link_to "登録する", new_user_registration_path %></button>
             <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
@@ -43,7 +44,7 @@
     <% end %>
     <%= yield %>
     <footer>
-
+      <p>© 2022 POTEPAN.INC.</p>
     </footer>
   </body>  
 </html>

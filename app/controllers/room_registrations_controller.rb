@@ -36,4 +36,23 @@ class RoomRegistrationsController < ApplicationController
     flash[:notice] = "ルームを削除しました"
     redirect_to room_registrations_path
   end
+
+  def search
+    if params[:room_address].present?
+      @room_registrations = RoomRegistration.where('room_address LIKE ?', "%#{params[:room_address]}%")
+    else
+      @room_registrations = RoomRegistration.none
+      flash[:notice] = "該当がありませんでした"
+    end
+  end
+
+  def search_free_word
+    if params[:free_word].present?
+      @room_registrations = RoomRegistration.where('room_name LIKE ? OR room_address LIKE ? OR room_introduction LIKE ? OR room_price LIKE ?', "%#{params[:free_word]}%", "%#{params[:free_word]}%", "%#{params[:free_word]}%", "%#{params[:free_word]}%")
+    else
+      @room_registrations = RoomRegistration.none
+      flash[:notice] = "該当がありませんでした"
+    end
+  end
+
 end

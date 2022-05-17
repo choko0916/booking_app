@@ -2,19 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
+  margin: 0px;
   width: 100%;
   background-color: rgb(247, 245, 245);
 }
 
 header {
   background-color: black;
-  height: 80px;
+  height: 70px;
   padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_left {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header_logo {
+  vertical-align: -50px;
+}
+
+.search {
+  padding-top: 10px;
+}
+
+.search p {
+  margin: 0px;
+  font-size: 13px;
+}
+
+.search_free_word {
+  padding-top: 10px;
+}
+
+.header_right {
+  text-align: right;
+  padding-right: 40px;
+  padding-top: 10px;
+}
+
+.header_right p {
+  margin: 0px;
 }
 
 footer {
+  margin: 0px;
   background-color: black;
   height: 100px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+footer p {
+  font-size: 12px;
+  margin: 0px auto;
+  display: block;
 }
 
 .flash {
@@ -27,16 +73,6 @@ footer {
 }
 
 .notice, .alert {
-  margin: 0px;
-}
-
-.header_right {
-  text-align: right;
-  padding-right: 30px;
-  padding-top: 10px;
-}
-
-.header_right p {
   margin: 0px;
 }
 

@@ -12,7 +12,7 @@ class RoomBookingsController < ApplicationController
       redirect_to room_registrations_path
     else
       flash[:notice] = "予約が失敗しました"
-      redirect_to room_registrations_path
+      render "new"
     end
   end
 

@@ -7,4 +7,29 @@
   height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
+  margin: auto;
+}
+
+.search-area-container {
+  height: 650px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.search-area {
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.search-area p {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.search-field {
+  margin-top: 20px;
 }
