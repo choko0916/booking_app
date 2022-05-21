@@ -1,0 +1,16 @@
+<h1>プロフィール</h1>
+
+<%= form_with model: @profile do |f| %>
+
+<p><%= f.hidden_field :user_id, value: @user.id %></p>
+<div>
+  <div><%= f.label :name, "名前" %></div>
+  <div><%= f.text_field :name %></div>
+</div>
+
+<div>
+  <div><%= f.label :introduction, "自己紹介" %></div>
+  <div><%= f.text_area :introduction %></div>
+</div>
+
+<% end %>

@@ -1,0 +1,24 @@
+<div class="profile_container">
+  <div class="profile_input_area">
+    <h3>プロフィール</h3>
+
+    <%= form_with model: @profile do |f| %>
+
+    <p><%= f.hidden_field :user_id, value: @user.id %></p>
+    <div class="profile_input_field">
+      <div><%= f.label :name, "名前" %></div>
+      <div><%= f.text_field :name, class: "name" %></div>
+    </div>
+
+    <div class="profile_input_field">
+      <div><%= f.label :introduction, "自己紹介" %></div>
+      <div><%= f.text_area :introduction, class: "introduction" %></div>
+    </div>
+
+    <div class="profile_input_field">
+      <div><%= f.submit "更新", class: "submit" %></div>
+    </div>
+
+    <% end %>
+  </div>
+</div>
