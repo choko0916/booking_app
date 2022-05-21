@@ -130,3 +130,33 @@ header p, header h4 {
   width: 100%;
   height: 100px;
 }
+
+/* 以下deviceのviews */
+
+.device_container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+
+.device_input_field h2 {
+  font-size: 20px;
+}
+
+.device_input_field {
+  text-align: center;
+  width: 75%;
+  background-color: white;
+  margin: auto;
+  padding: 15px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.field {
+  padding: 5px;
+}
+
+.actions {
+  padding: 5px;
+}
