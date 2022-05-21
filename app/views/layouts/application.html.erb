@@ -12,7 +12,9 @@
   <body>
     <header>
       <div class="header_left">
-        <div><%= image_tag 'logo.png', class: 'header_logo' %></div>
+        <%= link_to home_index_path, class: 'header_logo' do %>
+          <div><%= image_tag 'logo.png' %></div>
+        <% end %>
         <div class="search"><%= render "shared/search" %></div>
         <div class="search_free_word"><%= render "shared/search_free_word" %></div>
       </div>

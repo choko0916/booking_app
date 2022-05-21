@@ -8,7 +8,7 @@
       <div class="room_address"><%= room_registration.room_address %></div>
       <div class="room_introduction"><%= room_registration.room_introduction %></div>
       <div class="room_price">￥<%= room_registration.room_price %></div>
-      <%= link_to "詳細", room_registration %>
+      <%= link_to "予約", room_registration %>
       <%= link_to "削除", room_registration, method: :delete, data: { confirm: "本当に削除しますか？" } %>
     </div>
   <% end %>
