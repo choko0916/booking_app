@@ -41,13 +41,16 @@ header {
 }
 
 .header_right {
-  text-align: right;
   padding-right: 40px;
   padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
-.header_right p {
-  margin: 0px;
+.right {
+  padding-right: 10px;
 }
 
 footer {

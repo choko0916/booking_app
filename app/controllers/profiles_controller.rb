@@ -7,9 +7,7 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-    binding.pry
     @profile = Profile.find(params[:id])
-    binding.pry
   end
 
   def create
