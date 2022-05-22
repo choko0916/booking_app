@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :room_bookings
   has_one :profile
+  has_many :homes
   before_create :build_default_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
