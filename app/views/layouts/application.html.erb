@@ -45,26 +45,6 @@
             </div>
           </div>
 
-<!-- 以下Bootstrap4移行ガイド　2. <a> 要素を使用する場合　コピペ -->
-
-  <div class="dropdown">
-    <!-- 切替ボタンの設定 -->
-    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-      ドロップダウンリンク
-    </a>
-    <!-- ドロップメニューの設定 -->
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">メニュー1</a>
-      <a class="dropdown-item" href="#">メニュー2</a>
-      <a class="dropdown-item" href="#">メニュー3</a>
-    </div><!-- /.dropdown-menu -->
-  </div><!-- /.dropdown -->
-
-          <div class="header_button">
-            <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
-          </div>
-        </div>
-        
       <% else %>
         <div class="header_right">
           <div class="right signed_in_message">
@@ -88,5 +68,8 @@
     <footer>
       <p>© 2022 POTEPAN.INC.</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>  
 </html>
