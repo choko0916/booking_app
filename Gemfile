@@ -66,3 +66,6 @@ gem 'mini_magick'
 gem 'rmagick'
 
 gem 'pry-rails'
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails' 
