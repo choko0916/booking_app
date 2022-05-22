@@ -7,7 +7,9 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
+    binding.pry
     @profile = Profile.find(params[:id])
+    binding.pry
   end
 
   def create
@@ -34,6 +36,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name, :image, :introduction).merge(user_id: current_user.id)
+    params.require(:profile).permit(:name, :avatar, :introduction).merge(user_id: current_user.id)
   end
 end

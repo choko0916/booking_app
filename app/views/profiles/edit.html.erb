@@ -4,7 +4,20 @@
 
     <%= form_with model: @profile do |f| %>
 
-    <p><%= f.hidden_field :user_id, value: @user.id %></p>
+    <p><%= f.hidden_field :user_id, value: @user.id %></p> <!-- f.hidden_field そのインスタンスの属性、渡したい値は何か -->
+
+    <% if @profile.avatar? %>
+      <%= image_tag @profile.avatar.thumb100.url %>
+    <% else %>
+      <%= image_tag "/assets/default.jpg", size: "100x100" %>
+    <% end %>
+
+    <div class="profile_input_field">
+      <div><%= f.label :avatar, "アイコン画像" %></div>
+      <div><%= f.file_field :avatar, class: "avatar" %></div>
+    </div>
+
+
     <div class="profile_input_field">
       <div><%= f.label :name, "名前" %></div>
       <div><%= f.text_field :name, class: "name" %></div>
