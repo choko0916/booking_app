@@ -21,17 +21,50 @@
       <% if user_signed_in? %>  <!-- ユーザーがログインしているか調べる(diviseをアプリに導入すると使えるようになるメソッド)-->
         <div class="header_right"> <!-- 4/29 ヘッダーナビ作成する -->
           <div class="right user_name"><%= current_user.name %></div>
-          <div class="right avatar">
-            <% if @profile.avatar? %>
-              <%= image_tag @profile.avatar.thumb50.url %>
-            <% else %>
-              <%= image_tag "/assets/default.jpg", size: "50x50" %>
-            <% end %>
+          
+          
+          
+          <!-- bootstrap4を使用してドロップダウンメニュー作成 -->
+          <div class="dropdown">
+            <!-- 切替ボタンの設定 -->
+            <button id="btnOpenMenu" class="btn btn-primary dropdown-toggle"  
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if @profile.avatar? %>
+                <%= image_tag @profile.avatar.thumb50.url %>
+              <% else %>
+                <%= image_tag "/assets/default.jpg", size: "50x50" %>
+              <% end %>
+            </button>  
+            <!-- ドロップメニューの設定 -->
+            <div class="dropdown-menu" area-labelledby="btnOpenMenu">
+              <%= link_to "ルーム登録", new_room_registration_path, class: "dropdown-item" %>
+              <%= link_to "予約済みルーム一覧", room_bookings_path, class: "dropdown-item" %>
+              <%= link_to "登録済みルーム一覧", room_registrations_path, class: "dropdown-item" %>
+              <%= link_to "設定", profiles_path, class: "dropdown-item" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </div>
+
+<!-- 以下Bootstrap4移行ガイド　2. <a> 要素を使用する場合　コピペ -->
+
+  <div class="dropdown">
+    <!-- 切替ボタンの設定 -->
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+      ドロップダウンリンク
+    </a>
+    <!-- ドロップメニューの設定 -->
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="#">メニュー1</a>
+      <a class="dropdown-item" href="#">メニュー2</a>
+      <a class="dropdown-item" href="#">メニュー3</a>
+    </div><!-- /.dropdown-menu -->
+  </div><!-- /.dropdown -->
+
           <div class="header_button">
             <button class="sign_out"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
           </div>
         </div>
+        
       <% else %>
         <div class="header_right">
           <div class="right signed_in_message">
