@@ -27,8 +27,8 @@
           <!-- 切替ボタンの設定 -->
           <button id="btnOpenMenu" class="btn btn-primary dropdown-toggle"  
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if @profile.avatar? %>
-              <%= image_tag @profile.avatar.thumb50.url %>
+            <% if current_user.avatar? %>
+              <%= image_tag current_user.avatar.thumb50.url %>
             <% else %>
               <%= image_tag "/assets/default.jpg", size: "50x50" %>
             <% end %>
@@ -38,7 +38,7 @@
             <%= link_to "ルーム登録", new_room_registration_path, class: "dropdown-item" %>
             <%= link_to "予約済みルーム一覧", room_bookings_path, class: "dropdown-item" %>
             <%= link_to "登録済みルーム一覧", room_registrations_path, class: "dropdown-item" %>
-            <%= link_to "設定", profiles_path, class: "dropdown-item" %>
+
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </div>

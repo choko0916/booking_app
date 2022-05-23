@@ -18,9 +18,11 @@ class RoomBookingsController < ApplicationController
   end
 
   def show
+    @room_booking.find[:id]
   end
 
   def edit
+    @room_booking.find[:id]
   end
 
   def update

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'profiles/index'
   get 'home/index'
   devise_for :users, controllers: {
@@ -12,6 +13,6 @@ Rails.application.routes.draw do
 
   resources :room_registrations
   resources :room_bookings
-  resources :profiles
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
