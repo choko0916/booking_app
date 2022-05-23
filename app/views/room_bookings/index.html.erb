@@ -1,16 +1,16 @@
-<h2>ルーム情報一覧</h2>
+<h2>ルーム予約情報一覧</h2>
 <h3>検索結果：　</h3>
 
-  <% @room_registrations.each do |room_registration| %>
+  <% @room_bookings.each do |room_booking| %>
     <div class="hotel">
-      <div class="id"><%= room_registration.id %></div>
-      <div class="room_image"><%= image_tag room_registration.room_image.thumb300.url %></div>
-      <div class="room_name"><%= room_registration.room_name %></div>
-      <div class="room_address"><%= room_registration.room_address %></div>
-      <div class="room_introduction"><%= room_registration.room_introduction %></div>
-      <div class="room_price">￥<%= room_registration.room_price %></div>
+      <div class="id"><%= room_booking.id %></div>
+      <div class="room_image"><%= image_tag room_booking.room_image.thumb300.url %></div>
+      <div class="room_name"><%= room_booking.room_name %></div>
+      <div class="room_address"><%= room_booking.room_address %></div>
+      <div class="room_introduction"><%= room_booking.room_introduction %></div>
+      <div class="room_price">￥<%= room_booking.room_price %></div>
       <%= link_to "予約", new_room_booking_path %>
-      <%= link_to "削除", room_registration, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      <%= link_to "削除", room_booking, method: :delete, data: { confirm: "本当に削除しますか？" } %>
     </div>
   <% end %>
 

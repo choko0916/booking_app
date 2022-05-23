@@ -1,6 +1,6 @@
 class RoomBookingsController < ApplicationController
   def index
-    @room_registrations = RoomRegistration.all
+    @room_bookings = RoomBooking.all
   end
 
   def new
