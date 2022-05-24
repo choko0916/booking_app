@@ -88,7 +88,7 @@ header p, header h4 {
   color: white;
 }
 
-.registration_container, .booking_container {
+.registration_container, .booking_container, .user_container {
   margin: auto;
   padding-left: 45px;
   width: 80%;
@@ -104,13 +104,15 @@ header p, header h4 {
   width: 100px;
 }
 
-.registration, .booking {
+.registration, .booking, .user_input_field {
   border-bottom: 1px solid rgb(231, 229, 229);
   padding: 30px;
 }
 
 .submit {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  padding: 2px;
 }
 
 .registration_container h3, .booking_container h3{

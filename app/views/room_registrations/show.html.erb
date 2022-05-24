@@ -18,7 +18,7 @@
       <%= f.number_field :number_of_people, class:"input_field", placeholder: "宿泊人数を入力"  %>
     </div>
     <div class="booking">
-      <div class="submit"><%= f.submit "予約する" %></div>
+      <div><%= f.submit "予約する", class: "submit" %></div>
       <div class="room_bookings_path"><%= link_to "宿泊施設一覧に戻る", room_bookings_path %></div>
     </div>
   <% end %>
