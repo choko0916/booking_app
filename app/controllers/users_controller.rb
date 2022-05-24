@@ -1,22 +1,19 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
   end
 
   def edit
     @user = User.find(params[:id])
-    binding.pry
   end
 
   def update
     @user = User.find(params[:id])
-    binding.pry
     if @user.update(user_params)
-      binding.pry
       flash[:notice] = "プロフィールを作成しました"
-      redirect_to  edit_user_path
+      redirect_to  home_index_path
     else
-      binding.pry
       render edit_user_path
     end
   end
