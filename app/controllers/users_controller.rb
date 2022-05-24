@@ -14,11 +14,9 @@ class UsersController < ApplicationController
       flash[:notice] = "プロフィールを作成しました"
       redirect_to  home_index_path
     else
+      flash[:notice] = "プロフィールの作成に失敗しました"
       render edit_user_path
     end
-  end
-
-  def destroy
   end
 
   private
