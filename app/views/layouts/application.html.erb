@@ -37,7 +37,7 @@
               <!-- ドロップメニューの設定 -->
               <div class="dropdown-menu" area-labelledby="btnOpenMenu">
                 <%= link_to "ルーム登録", new_room_registration_path, class: "dropdown-item" %>
-                <%= link_to "予約済みルーム一覧", room_bookings_path, class: "dropdown-item" %>
+                <%= link_to "予約済みルーム一覧", room_booking_path(current_user.id), class: "dropdown-item" %>
                 <%= link_to "登録済みルーム一覧", room_registrations_path, class: "dropdown-item" %>
                 <%= link_to "設定", edit_user_path(current_user.id), class: "dropdown-item" %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

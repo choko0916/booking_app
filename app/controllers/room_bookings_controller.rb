@@ -1,9 +1,7 @@
 class RoomBookingsController < ApplicationController
   def index
     @room_bookings = RoomBooking.all
-  end
-
-  def new
+    @user = current_user
   end
 
   def create
@@ -18,17 +16,11 @@ class RoomBookingsController < ApplicationController
   end
 
   def show
-    @room_booking.find[:id]
+    @room_booking = RoomBooking.find(params[:id])
   end
 
   def edit
-    @room_booking.find[:id]
-  end
-
-  def update
-  end
-
-  def destroy
+    @room_booking = RoomBooking.find(params[:id])
   end
 
   private
