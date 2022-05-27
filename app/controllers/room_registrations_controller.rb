@@ -13,7 +13,7 @@ class RoomRegistrationsController < ApplicationController
     if @room_registration.save
       binding.pry
       flash[:notice] = "ルームを新規登録しました"
-      redirect_to home_index_path
+      redirect_to room_registrations_post_path
     else
       binding.pry
       flash[:notice] = "ルームの登録に失敗しました"
@@ -52,6 +52,12 @@ class RoomRegistrationsController < ApplicationController
       flash[:notice] = "該当がありませんでした"
     end
   end
+  
+  def post
+    @user = current_user
+    @room_registrations = @user.room_registrations
+  end
+
 
   private
 
