@@ -25,7 +25,6 @@ class RoomBookingsController < ApplicationController
     @room_bookings = @user.room_bookings
   end
 
-
   private
 
   def room_booking_params
