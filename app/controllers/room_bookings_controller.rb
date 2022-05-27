@@ -4,6 +4,11 @@ class RoomBookingsController < ApplicationController
     @user = current_user
   end
 
+  def new
+    @room_registration = RoomRegistration.find(params[:id])
+    @room_booking = RoomBooking.new(room_booking_params)
+  end
+
   def create
     @room_booking = RoomBooking.new(room_booking_params)
     if @room_booking.save
@@ -16,12 +21,10 @@ class RoomBookingsController < ApplicationController
   end
 
   def show
-    @room_booking = RoomBooking.find(params[:id])
+    @user = current_user
+    @room_bookings = @user.room_bookings
   end
 
-  def edit
-    @room_booking = RoomBooking.find(params[:id])
-  end
 
   private
 

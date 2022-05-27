@@ -23,13 +23,6 @@ class RoomRegistrationsController < ApplicationController
     @room_booking = RoomBooking.new
   end
 
-  def edit
-    @room_registration = RoomRegistration.find(params[:id])
-  end
-
-  def updated
-  end
-
   def destroy
     @room_registration = RoomRegistration.find(params[:id])
     @room_registration.destroy
@@ -44,6 +37,7 @@ class RoomRegistrationsController < ApplicationController
       @room_registrations = RoomRegistration.none
       flash[:notice] = "該当がありませんでした"
     end
+    @room_booking = RoomBooking.new
   end
 
   def search_free_word
