@@ -1,8 +1,12 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <div class="registration_container">
   <h3>ルーム情報登録</h3>
 
   <%= form_with model: @room_registration do |f| %>
-  
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <div class="registration">
       <%= f.label :room_name, "ルーム名", class:"bold" %><br>
       <%= f.text_field :room_name, class:"input_field", placeholder: "ルーム名を入力" %>

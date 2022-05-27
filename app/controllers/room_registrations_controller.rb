@@ -8,11 +8,15 @@ class RoomRegistrationsController < ApplicationController
   end
 
   def create
-    @room_registration = RoomRegistration.new(params.require(:room_registration).permit(:id, :room_name, :room_introduction, :room_price, :room_address, :room_image))
+    @room_registration = RoomRegistration.new(room_registration_params)
+    binding.pry
     if @room_registration.save
+      binding.pry
       flash[:notice] = "ルームを新規登録しました"
       redirect_to home_index_path
     else
+      binding.pry
+      flash[:notice] = "ルームの登録に失敗しました"
       render :new
     end
   end
@@ -49,4 +53,9 @@ class RoomRegistrationsController < ApplicationController
     end
   end
 
+  private
+
+  def room_registration_params
+    params.require(:room_registration).permit(:id, :room_name, :room_introduction, :room_price, :room_address, :room_image).merge(user_id: current_user.id)
+  end
 end
