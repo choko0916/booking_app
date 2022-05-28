@@ -3,9 +3,8 @@ class RoomBookingsController < ApplicationController
     @room_bookings = RoomBooking.all
     @user = current_user
   end
-
-  def new
-    @room_registration = RoomRegistration.find(params[:id])
+  
+  def confirm
     @room_booking = RoomBooking.new(room_booking_params)
   end
 

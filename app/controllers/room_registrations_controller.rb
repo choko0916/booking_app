@@ -9,20 +9,16 @@ class RoomRegistrationsController < ApplicationController
 
   def create
     @room_registration = RoomRegistration.new(room_registration_params)
-    binding.pry
     if @room_registration.save
-      binding.pry
       flash[:notice] = "ルームを新規登録しました"
       redirect_to room_registrations_post_path
     else
-      binding.pry
       flash[:notice] = "ルームの登録に失敗しました"
       render :new
     end
   end
 
   def show
-    @user = current_user
     @room_registration = RoomRegistration.find(params[:id])
     @room_booking = RoomBooking.new
   end

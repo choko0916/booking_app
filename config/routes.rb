@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'room_registrations/search_free_word', to: 'room_registrations#search_free_word'
   get 'room_registrations/post', to: 'room_registrations#post'
 
+  post 'room_bookings/confirm', to: 'room_bookings#confirm' # 確認画面
+  post 'room_bookings/back', to: 'room_bookings#back'  # 確認画面から「入力画面に戻る」をクリックしたとき
+
   resources :room_registrations
   resources :room_bookings
   resources :users

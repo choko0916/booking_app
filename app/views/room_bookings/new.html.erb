@@ -1,7 +1,7 @@
 <div class="booking_container">
   <h3>予約ページ</h3>
 
-  <%= form_with model: @room_booking do |f| %>
+  <%= form_with url: "room_bookings_confirm_path" do |f| %>
 
   <p><%= f.hidden_field :room_registration_id, value: @room_registration.id %></p>
 
@@ -18,7 +18,7 @@
       <%= f.number_field :number_of_people, class:"input_field", placeholder: "宿泊人数を入力"  %>
     </div>
     <div class="booking">
-      <div class="submit"><%= f.submit "予約する" %></div>
+      <div><%= f.submit "確認画面へ", class: "submit" %></div>
       <div class="room_bookings_path"><%= link_to "宿泊施設一覧に戻る", room_bookings_path %></div>
     </div>
   <% end %>
