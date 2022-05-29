@@ -6,16 +6,17 @@ class RoomBookingsController < ApplicationController
   
   def confirm
     @room_booking = RoomBooking.new(room_booking_params)
+    @booking_days = (@room_booking.end_date - @room_booking.start_date).to_i
   end
 
   def create
     @room_booking = RoomBooking.new(room_booking_params)
+    @booking_days = (@room_booking.end_date - @room_booking.start_date).to_i
     if @room_booking.save
       flash[:notice] = "予約が完了しました"
-      redirect_to room_registrations_path
     else
       flash[:notice] = "予約が失敗しました"
-      render "new"
+      render "confirm"
     end
   end
 
