@@ -19,7 +19,7 @@
     </div>
     <div class="booking">
       <div><%= f.submit "確認画面へ", class: "submit" %></div>
-      <div class="room_bookings_path"><%= link_to "宿泊施設一覧に戻る", room_bookings_path %></div>
+      <button type="button", class="btn btn-success"><%= link_to "ルーム情報一覧へ", room_registrations_path %></button>
     </div>
   <% end %>
 

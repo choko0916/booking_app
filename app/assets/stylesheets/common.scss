@@ -59,6 +59,7 @@ footer {
   color: white;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 footer p {
@@ -163,4 +164,8 @@ header p, header h4 {
 
 .actions {
   padding: 5px;
+}
+
+.btn {
+  width: 100%;
 }

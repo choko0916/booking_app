@@ -1,7 +1,6 @@
 <div class="booking_container">
   <h3>予約確認画面</h3>
 
-
   <div class="booking">
     <p>金額</p>
     <p>¥<%= @room_booking.room_registration.room_price %>（お１人様１泊につき）</p>
@@ -36,7 +35,8 @@
     <%= f.hidden_field :start_date %> 
     <%= f.hidden_field :end_date %>
     <%= f.hidden_field :number_of_people %>  
-    <div class="submit"><%= f.submit "予約を確定" %></div>
-    <div class="room_bookings_path"><%= link_to "宿泊施設一覧に戻る", room_bookings_path %></div> 
+    <div><%= f.submit "予約を確定", class: "submit" %></div>
+    <button type="button", class="btn btn-success""><%= link_to "ルーム情報一覧へ", room_registrations_path %></button> 
   <% end %>
+  
 </div>
