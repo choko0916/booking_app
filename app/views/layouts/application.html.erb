@@ -23,7 +23,6 @@
 
         <% if user_signed_in? %>  <!-- ユーザーがログインしているか調べる(diviseをアプリに導入すると使えるようになるメソッド)-->
           <div class="header_right">
-            <div class="right user_name"><%= current_user.name %></div>
             <!-- bootstrap4を使用してドロップダウンメニュー作成 -->
             <div class="dropdown">
               <!-- 切替ボタンの設定 -->
@@ -34,7 +33,7 @@
                 <% else %>
                   <%= image_tag "/assets/default.jpg", size: "50x50" %>
                 <% end %>
-              </div>  
+              </div>
               <!-- ドロップメニューの設定 -->
               <div class="dropdown-menu" area-labelledby="btnOpenMenu">
                 <%= link_to "ルーム登録", new_room_registration_path, class: "dropdown-item" %>
@@ -44,6 +43,7 @@
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
+            <div class="right user_name"><%= current_user.name %></div>
         <% else %>
           <div class="header_right">
             <div class="right signed_in_message">
