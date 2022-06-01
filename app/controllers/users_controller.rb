@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "プロフィールを作成しました"
+      flash[:notice] = "プロフィールを更新しました"
       redirect_to  home_index_path
     else
-      flash[:notice] = "プロフィールの作成に失敗しました"
+      flash[:notice] = "プロフィールの更新に失敗しました"
       render edit_user_path
     end
   end

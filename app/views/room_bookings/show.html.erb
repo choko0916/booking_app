@@ -10,9 +10,10 @@
           <th>ルーム紹介</th>
           <th>金額（１人当たり）</th>
           <th>予約人数</th>
-          <th>合計金額</th>
           <th>開始日</th>
           <th>終了日</th>
+          <th>宿泊日数</th>
+          <th>合計金額</th>
           <th>予約確定日時</th>
         </tr>
       </thead>
@@ -24,9 +25,10 @@
           <td><%= room_booking.room_registration.room_introduction %></td>
           <td><%= room_booking.room_registration.room_price %></td>
           <td><%= room_booking.number_of_people %></td>
-          <td><%= room_booking.room_registration.room_price * room_booking.number_of_people %></td>
           <td><%= room_booking.start_date %></td>
           <td><%= room_booking.end_date %></td>
+          <td><%= (room_booking.end_date - room_booking.start_date).to_i %>泊<%= (room_booking.end_date - room_booking.start_date).to_i + 1 %>日</td>
+          <td><%= room_booking.room_registration.room_price * room_booking.number_of_people * (room_booking.end_date - room_booking.start_date).to_i %></td>
           <td><%= room_booking.created_at %></td>
         </tr>
       </tbody>
